@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fourtyfour_mask/geburtstage.dart';
 
 void main() => runApp(
       MyApp(),
@@ -10,6 +11,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: MyHomePage(),
+      /* routes: <String, WidgetBuilder>{
+          "/a": (BuildContext context) => new Geburtstage("Fred"), 
+        }*/
     );
   }
 }
@@ -51,22 +55,35 @@ class SideDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.home),
             title: Text('Startseite'),
-            onTap: () => {},
+            onTap: () => {
+              Navigator.of(context).push(new MaterialPageRoute(
+                  builder: (BuildContext context) => new Geburtstage("Krieg")))
+            },
           ),
           ListTile(
             leading: Icon(Icons.cake),
             title: Text('Geburtstage'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () => {
+              Navigator.of(context).push(new MaterialPageRoute(
+                  builder: (BuildContext context) =>
+                      new Geburtstage("Sebastian")))
+            },
           ),
           ListTile(
             leading: Icon(Icons.assignment_ind_sharp),
             title: Text('Strafen'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () => {
+              Navigator.of(context).push(new MaterialPageRoute(
+                  builder: (BuildContext context) => new Geburtstage("Cloud")))
+            },
           ),
           ListTile(
             leading: Icon(Icons.photo_camera_rounded),
             title: Text('Medien'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () => {
+              Navigator.of(context).push(new MaterialPageRoute(
+                  builder: (BuildContext context) => new Geburtstage("Tim")))
+            },
           ),
         ],
       ),
